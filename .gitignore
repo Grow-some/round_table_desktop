@@ -1,0 +1,18 @@
+out/
+dist/AsrApp.jar
+
+test-out/
+lib/
+
+dist/bin/cpu/*.exe
+dist/bin/cpu/*.dll
+dist/bin/cuda/*.exe
+dist/bin/cuda/*.dll
+dist/models/*.bin
+dist/jre/
+
+dist/wav/
+dist/logs/
+
+# TODO:CICD
+.github/
