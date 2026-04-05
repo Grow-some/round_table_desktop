@@ -10,7 +10,7 @@
 
 ## アーキテクチャ
 
-```
+```tree
 AsrApp (エントリポイント)
  └─ DeviceSelector  … 起動時デバイス選択ダイアログ
  └─ MainWindow      … Swing UI + 録音ループ
@@ -23,15 +23,15 @@ AsrApp (エントリポイント)
 
 ## 必要要件（配布先マシン）
 
-| コンポーネント | バージョン |
-|---|---|
-| Java | 17 以上 |
-| OS | Windows 10/11 x64 |
-| CUDA (GPU 利用時) | 12.x |
+| コンポーネント    | バージョン        |
+| ----------------- | ----------------- |
+| Java              | 17 以上           |
+| OS                | Windows 10/11 x64 |
+| CUDA (GPU 利用時) | 12.x              |
 
 ## ディレクトリ構成
 
-```
+```tree
 dist/
 ├── AsrApp.jar          ← ビルド済み JAR（要ビルドまたはリリースから取得）
 ├── launch.bat          ← ユーザー向け起動スクリプト
@@ -69,14 +69,18 @@ dist\launch.bat
 
 ```bat
 build.bat          # Windows
-bash build.sh      # Linux / CI
 ```
 
 出力: `dist/AsrApp.jar`
 
 ## テスト
 
-TBD
+```bat
+test.bat
+```
+
+JUnit 5 による単体・結合・システムテストを実行します。Java 17 以上が必要です。  
+結果は標準出力に表示されます。
 
 ## ライセンス
 
