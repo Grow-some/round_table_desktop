@@ -1,16 +1,15 @@
 @echo off
 setlocal
-chcp 65001 > nul
 cd /d "%~dp0"
 
-echo [INFO] ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ä¸­...
+echo [INFO] ƒRƒ“ƒpƒCƒ‹’†...
 if not exist out mkdir out
 setlocal enabledelayedexpansion
 set SOURCES=
 for /r src %%f in (*.java) do set SOURCES=!SOURCES! "%%f"
 javac -encoding UTF-8 -d out !SOURCES!
 if %errorlevel% neq 0 (
-    echo [ERROR] ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«å¤±æ•—
+    echo [ERROR] ƒRƒ“ƒpƒCƒ‹¸”s
     exit /b 1
 )
 
@@ -19,10 +18,10 @@ echo Main-Class: app.AsrApp> manifest.txt
 jar --create --file dist\AsrApp.jar --manifest=manifest.txt -C out .
 del manifest.txt
 if %errorlevel% neq 0 (
-    echo [ERROR] JAR ç”Ÿæˆå¤±æ•—
+    echo [ERROR] JAR ¶¬¸”s
     exit /b 1
 )
 
 rmdir /s /q out
-echo [INFO] ãƒ“ãƒ«ãƒ‰æˆåŠŸ: dist\AsrApp.jar
+echo [INFO] ƒrƒ‹ƒh¬Œ÷: dist\AsrApp.jar
 endlocal
